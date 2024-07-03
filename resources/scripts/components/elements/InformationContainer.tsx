@@ -41,7 +41,7 @@ export default () => {
         <>
             {store.earn.enabled ? (
                 <InformationBox icon={faCircle} iconCss={'animate-pulse'}>
-                    Earning <span className={'text-green-600'}>{store.earn.amount}</span> credits / min.
+                    每分鐘獲得 <span className={'text-green-600'}>{store.earn.amount}</span> 點積分.
                 </InformationBox>
             ) : (
                 <InformationBox icon={faExclamationCircle}>
@@ -49,16 +49,16 @@ export default () => {
                 </InformationBox>
             )}
             <InformationBox icon={faCoins}>
-                You have <span className={'text-green-600'}>{bal}</span> credits available.
+                你有 <span className={'text-green-600'}>{bal}</span> 點積分可用.
             </InformationBox>
             <InformationBox icon={faUserLock}>
                 {user.useTotp ? (
                     <>
-                        <span className={'text-green-600'}>2FA is enabled</span> on your account.
+                        <span className={'text-green-600'}>2FA 已啟動</span> 在你的帳戶.
                     </>
                 ) : (
                     <>
-                        <span className={'text-yellow-600'}>Enable 2FA</span> to secure your account.
+                        <span className={'text-yellow-600'}>啟動 2FA</span> 來保護你的帳戶.
                     </>
                 )}
             </InformationBox>

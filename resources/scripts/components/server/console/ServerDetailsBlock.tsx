@@ -81,7 +81,7 @@ export default ({ className }: { className?: string }) => {
 
     return (
         <div className={classNames('grid grid-cols-6 gap-2 md:gap-4', className)}>
-            <StatBlock icon={faClock} title={'Uptime'}>
+            <StatBlock icon={faClock} title={'上線時間'}>
                 {status === null ? (
                     'Offline'
                 ) : stats.uptime > 0 ? (
@@ -90,12 +90,12 @@ export default ({ className }: { className?: string }) => {
                     capitalize(status)
                 )}
             </StatBlock>
-            <StatBlock icon={faWifi} title={'Address'} copyOnClick={allocation}>
+            <StatBlock icon={faWifi} title={'位址'} copyOnClick={allocation}>
                 {allocation}
             </StatBlock>
             <StatBlock icon={faMicrochip} title={'CPU'}>
                 {status === 'offline' ? (
-                    <span className={'text-gray-400'}>Offline</span>
+                    <span className={'text-gray-400'}>離線</span>
                 ) : (
                     <Limit limit={textLimits.cpu}>{stats.cpu.toFixed(2)}%</Limit>
                 )}
@@ -109,7 +109,7 @@ export default ({ className }: { className?: string }) => {
             </StatBlock>
             <StatBlock icon={faMemory} title={'Memory'}>
                 {status === 'offline' ? (
-                    <span className={'text-gray-400'}>Offline</span>
+                    <span className={'text-gray-400'}>離線</span>
                 ) : (
                     <Limit limit={textLimits.memory}>{bytesToString(stats.memory)}</Limit>
                 )}
@@ -131,11 +131,11 @@ export default ({ className }: { className?: string }) => {
                     <Bar style={{ width: diskUsed === undefined ? '100%' : `${diskUsed}%` }} />
                 )}
             </StatBlock>
-            <StatBlock icon={faScroll} title={'Save Console Logs'}>
+            <StatBlock icon={faScroll} title={'儲存控制台紀錄'}>
                 <ConsoleShareContainer />
             </StatBlock>
             {renewable && (
-                <StatBlock icon={faClock} title={'Renewal Date'}>
+                <StatBlock icon={faClock} title={'到期時間'}>
                     <RenewalInfo />
                 </StatBlock>
             )}

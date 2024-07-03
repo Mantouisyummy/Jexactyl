@@ -80,7 +80,7 @@ export default () => {
                 <h3
                     className={'font-header transition-colors duration-100 group-hover:text-gray-50 font-semibold mb-2'}
                 >
-                    Current Status
+                    目前狀態
                 </h3>
             </div>
             <div className={'grid grid-cols-2 gap-3 mx-4'}>
@@ -89,13 +89,13 @@ export default () => {
                         <p className={'font-bold text-xl'}>
                             <FontAwesomeIcon icon={faClock} size={'1x'} />
                             <br />
-                            Server is <span className={getColorFromStatus(status ?? 'offline')}>{status}</span>
+                            伺服器正 <span className={getColorFromStatus(status ?? '離線')}>{status}</span>
                         </p>
                         <p className={'font-semibold text-sm text-gray-400 mt-1'}>
                             {status === 'running' ? (
                                 <UptimeDuration uptime={stats.uptime / 1000} />
                             ) : (
-                                <>Unable to fetch uptime</>
+                                <>無法取得運作時間</>
                             )}
                         </p>
                     </div>
@@ -105,9 +105,9 @@ export default () => {
                         <p className={'font-bold text-xl'}>
                             <FontAwesomeIcon icon={faMicrochip} size={'1x'} />
                             <br />
-                            CPU usage is {getStatusFromUsage(parseInt(cpuUsed))}
+                            CPU 使用量為 {getStatusFromUsage(parseInt(cpuUsed))}
                         </p>
-                        <p className={'font-semibold text-sm text-gray-400 mt-1'}>Using {cpuUsed}%</p>
+                        <p className={'font-semibold text-sm text-gray-400 mt-1'}>使用了 {cpuUsed}%</p>
                     </div>
                 </ContentBox>
                 <ContentBox isLight>
@@ -115,9 +115,9 @@ export default () => {
                         <p className={'font-bold text-xl'}>
                             <FontAwesomeIcon icon={faMemory} size={'1x'} />
                             <br />
-                            RAM usage is {getStatusFromUsage(parseInt(memoryUsed))}
+                            RAM 使用量為 {getStatusFromUsage(parseInt(memoryUsed))}
                         </p>
-                        <p className={'font-semibold text-sm text-gray-400 mt-1'}>Using {memoryUsed}%</p>
+                        <p className={'font-semibold text-sm text-gray-400 mt-1'}>使用了 {memoryUsed}%</p>
                     </div>
                 </ContentBox>
                 <ContentBox isLight>
@@ -125,9 +125,9 @@ export default () => {
                         <p className={'font-bold text-xl'}>
                             <FontAwesomeIcon icon={faHdd} size={'1x'} />
                             <br />
-                            Disk usage is {getStatusFromUsage(parseInt(diskUsed))}
+                            Disk 使用量為 {getStatusFromUsage(parseInt(diskUsed))}
                         </p>
-                        <p className={'font-semibold text-sm text-gray-400 mt-1'}>Using {diskUsed}%</p>
+                        <p className={'font-semibold text-sm text-gray-400 mt-1'}>使用了 {diskUsed}%</p>
                     </div>
                 </ContentBox>
             </div>

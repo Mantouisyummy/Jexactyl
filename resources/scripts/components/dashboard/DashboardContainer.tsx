@@ -7,6 +7,7 @@ import { PaginatedResult } from '@/api/http';
 import { useLocation } from 'react-router-dom';
 import { Server } from '@/api/server/getServer';
 import Switch from '@/components/elements/Switch';
+import { Alert } from '@/components/elements/alert';
 import React, { useEffect, useState } from 'react';
 import Spinner from '@/components/elements/Spinner';
 import ServerRow from '@/components/dashboard/ServerRow';
@@ -56,10 +57,10 @@ export default () => {
                     <>
                         <div>
                             <h1 className={'text-5xl'}>
-                                {showOnlyAdmin ? 'Showing other servers' : 'Showing your servers'}
+                                {showOnlyAdmin ? '其他伺服器' : '您的伺服器'}
                             </h1>
                             <h3 className={'text-2xl mt-2 text-neutral-500'}>
-                                Select a server to view, update or modify.
+                                選擇一個伺服器以查看、更新或修改。
                             </h3>
                         </div>
                         <Switch
@@ -70,9 +71,9 @@ export default () => {
                     </>
                 ) : (
                     <div>
-                        <h1 className={'text-5xl'}>Welcome, {username}!</h1>
+                        <h1 className={'text-5xl'}>歡迎, {username}!</h1>
                         <h3 className={'text-2xl mt-2 text-neutral-500'}>
-                            Select a server from the list of your servers below.
+                            請從下面的伺服器列表中選擇一個伺服器.
                         </h3>
                     </div>
                 )}
@@ -97,7 +98,7 @@ export default () => {
                             </div>
                         ) : (
                             <p className={'text-gray-400 text-lg font-semibold text-center'}>
-                                Doesn&apos;t look like you have any servers here.
+                                看起來您沒有任何伺服器再這呢.
                             </p>
                         )
                     }

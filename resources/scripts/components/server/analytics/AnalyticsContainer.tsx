@@ -93,7 +93,7 @@ export default () => {
     }, [instance, connected]);
 
     return (
-        <ServerContentBlock title={'Server Analytics'} description={'View statistics and performance for your server.'}>
+        <ServerContentBlock title={'伺服器分析'} description={'查看伺服器的統計和性能.'}>
             <div className={'grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-2'}>
                 <div className={'col-span-2 grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4'}>
                     <UsageMetrics />
@@ -104,13 +104,13 @@ export default () => {
                         <PowerButtons className={'flex space-x-4 text-center mb-4'} />
                     </Can>
                     <ContentBox>
-                        <UsageBox progress={parseInt(cpuUsed)} title={'CPU Usage'} content={`${cpuUsed}% used`} />
+                        <UsageBox progress={parseInt(cpuUsed)} title={'CPU 使用量'} content={`使用了 ${cpuUsed}%`} />
                         <UsageBox
                             progress={parseInt(memoryUsed)}
-                            title={'Memory Usage'}
-                            content={`${memoryUsed}% used`}
+                            title={'Memory 使用量'}
+                            content={`使用了 ${memoryUsed}%`}
                         />
-                        <UsageBox progress={parseInt(diskUsed)} title={'Disk Usage'} content={`${diskUsed}% used`} />
+                        <UsageBox progress={parseInt(diskUsed)} title={'Disk 使用量'} content={`使用了 ${diskUsed}%`} />
                     </ContentBox>
                     <TitledGreyBox title={'Performance Metrics'} className={'rounded mt-4'}>
                         {!messages || messages.length < 1 ? (

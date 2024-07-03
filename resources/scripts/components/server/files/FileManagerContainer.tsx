@@ -80,7 +80,7 @@ export default () => {
     };
 
     return (
-        <ServerContentBlock title={'File Manager'} description={'Create, edit and view files.'} showFlashKey={'files'}>
+        <ServerContentBlock title={'檔案管理器'} description={'創建, 編輯和查看檔案.'} showFlashKey={'files'}>
             <Input onChange={searchFiles} className={'mb-4 j-up'} placeholder={'Search for files and folders...'} />
             <div css={tw`flex flex-wrap-reverse md:flex-nowrap justify-center mb-4`}>
                 <ErrorBoundary>
@@ -104,7 +104,7 @@ export default () => {
                             <UploadButton />
                             <PullFileModal />
                             <NavLink to={`/server/${id}/files/new${window.location.hash}`}>
-                                <Button>New File</Button>
+                                <Button>新檔案</Button>
                             </NavLink>
                         </div>
                     </Can>
@@ -115,15 +115,14 @@ export default () => {
             ) : (
                 <>
                     {!files.length ? (
-                        <p css={tw`text-sm text-neutral-400 text-center`}>This directory seems to be empty.</p>
+                        <p css={tw`text-sm text-neutral-400 text-center`}>資料夾看起來空空如也呢(っ´ω`c)</p>
                     ) : (
                         <CSSTransition classNames={'fade'} timeout={150} appear in>
                             <>
                                 {files.length > 250 && (
                                     <div css={tw`rounded bg-yellow-400 mb-px p-3`}>
                                         <p css={tw`text-yellow-900 text-sm text-center`}>
-                                            This directory is too large to display in the browser, limiting the output
-                                            to the first 250 files.
+                                            此目錄太大，無法在瀏覽器中顯示完整內容，僅顯示前250個文件.
                                         </p>
                                     </div>
                                 )}
@@ -139,7 +138,7 @@ export default () => {
             <Can action={'file.sftp'}>
                 <TitledGreyBox title={'SFTP Details'} className={'mt-8 md:mt-6'}>
                     <div>
-                        <Label>Server Address</Label>
+                        <Label>伺服器位址</Label>
                         <CopyOnClick text={`sftp://${ip(sftp.ip)}:${sftp.port}`}>
                             <Input type={'text'} value={`sftp://${ip(sftp.ip)}:${sftp.port}`} readOnly />
                         </CopyOnClick>
@@ -154,13 +153,13 @@ export default () => {
                         <div css={tw`flex-1`}>
                             <div css={tw`border-l-4 border-cyan-500 p-3`}>
                                 <p css={tw`text-xs text-neutral-200`}>
-                                    Your SFTP password is the same as the password you use to access this panel.
+                                    您的SFTP密碼和您進入面板的密碼一致.
                                 </p>
                             </div>
                         </div>
                         <div css={tw`ml-4`}>
                             <a href={`sftp://${username}.${id}@${ip(sftp.ip)}:${sftp.port}`}>
-                                <Button.Text variant={Button.Variants.Secondary}>Launch SFTP</Button.Text>
+                                <Button.Text variant={Button.Variants.Secondary}>啟動 SFTP</Button.Text>
                             </a>
                         </div>
                     </div>

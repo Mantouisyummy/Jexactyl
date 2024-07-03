@@ -5,6 +5,7 @@ import { object, string } from 'yup';
 import useFlash from '@/plugins/useFlash';
 import { useStoreState } from 'easy-peasy';
 import { Formik, FormikHelpers } from 'formik';
+import { Alert } from '@/components/elements/alert';
 import Field from '@/components/elements/Field';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/elements/button/index';
@@ -77,14 +78,20 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
             })}
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
-                <LoginFormContainer title={'Login to ' + name} css={tw`w-full flex`}>
-                    <Field light type={'text'} label={'Username or Email'} name={'username'} disabled={isSubmitting} />
+                <LoginFormContainer title={'登入至 ' + name} css={tw`w-full flex`}>
+                    <Alert
+                        type="info"
+                        className="my-4 w-full"
+                    >
+                        目前不開放電子郵件註冊，請使用Discord登入.
+                    </Alert>
+                    <Field light type={'text'} label={'用戶名 或 密碼'} name={'username'} disabled={isSubmitting} />
                     <div css={tw`mt-6`}>
-                        <Field light type={'password'} label={'Password'} name={'password'} disabled={isSubmitting} />
+                        <Field light type={'password'} label={'密碼'} name={'password'} disabled={isSubmitting} />
                     </div>
                     <div css={tw`mt-6`}>
                         <Button type={'submit'} size={Button.Sizes.Large} css={tw`w-full`} disabled={isSubmitting}>
-                            Login
+                            登入
                         </Button>
                     </div>
                     {recaptchaEnabled && (
@@ -105,9 +112,10 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
                     <div css={tw`mt-6 text-center`}>
                         <Link
                             to={'/auth/password'}
-                            css={tw`text-xs text-neutral-500 tracking-wide no-underline uppercase hover:text-neutral-600`}
                         >
-                            Forgot password?
+                            <Button style={{ backgroundColor: '#808080' }} size={Button.Sizes.Large} disabled={isSubmitting}>
+                                忘記密碼?
+                            </Button>
                         </Link>
                     </div>
                     {(email || discord) && (
@@ -117,15 +125,16 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
                                     to={'/auth/register'}
                                     css={tw`text-xs text-neutral-500 tracking-wide no-underline uppercase hover:text-neutral-600`}
                                 >
-                                    Signup with Email
+                                    使用Email註冊
                                 </Link>
                             )}
                             {discord && (
                                 <Link
                                     to={'/auth/discord'}
-                                    css={tw`text-xs ml-6 text-neutral-500 tracking-wide no-underline uppercase hover:text-neutral-600`}
                                 >
-                                    Authenticate with Discord
+                                    <Button style={{ backgroundColor: '#5865F2' }} size={Button.Sizes.Large} disabled={isSubmitting}>
+                                        使用 Discord 登入
+                                    </Button>
                                 </Link>
                             )}
                         </div>

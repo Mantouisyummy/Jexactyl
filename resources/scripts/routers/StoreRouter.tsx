@@ -25,22 +25,22 @@ export default () => {
                 <div>
                     <NavLink to={match.path} exact>
                         <div className={'flex items-center justify-between'}>
-                            Store <Icon.ShoppingCart className={'ml-1'} size={18} />
+                            商店 <Icon.ShoppingCart className={'ml-1'} size={18} />
                         </div>
                     </NavLink>
                     <NavLink to={`${match.path}/resources`}>
                         <div className={'flex items-center justify-between'}>
-                            Resources <Icon.Cpu className={'ml-1'} size={18} />
+                            資源 <Icon.Cpu className={'ml-1'} size={18} />
                         </div>
                     </NavLink>
                     <NavLink to={`${match.path}/credits`}>
                         <div className={'flex items-center justify-between'}>
-                            Balance <Icon.DollarSign className={'ml-1'} size={18} />
+                            餘額 <Icon.DollarSign className={'ml-1'} size={18} />
                         </div>
                     </NavLink>
                     <NavLink to={`${match.path}/create`}>
                         <div className={'flex items-center justify-between'}>
-                            Create Server <Icon.Server className={'ml-1'} size={18} />
+                            建立伺服器 <Icon.Server className={'ml-1'} size={18} />
                         </div>
                     </NavLink>
                 </div>

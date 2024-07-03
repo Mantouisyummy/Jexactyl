@@ -52,8 +52,8 @@ const NetworkContainer = () => {
 
     return (
         <ServerContentBlock
-            title={'Network'}
-            description={'Configure external networking and ports.'}
+            title={'網路'}
+            description={'配置外部網路和端口.'}
             showFlashKey={'server:network'}
         >
             {!data ? (

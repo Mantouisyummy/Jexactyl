@@ -15,7 +15,7 @@ interface BoxProps {
 }
 
 export default (props: BoxProps) => (
-    <TitledGreyBox title={'Purchase ' + props.type}>
+    <TitledGreyBox title={'購買 ' + props.type}>
         <div className={'flex flex-row justify-center items-center my-2'}>
             {props.icon}
             <Button.Success
@@ -31,8 +31,8 @@ export default (props: BoxProps) => (
         </div>
         <p className={'mt-2 text-gray-500 text-xs flex justify-center'}>{props.description}</p>
         <p className={'mt-1 text-gray-500 text-xs flex justify-center'}>
-            Cost per {props.amount}
-            {props.suffix} {props.type}: {props.cost} credits
+            每 {props.amount}
+            {props.suffix} {props.type}: 需要 {props.cost} 積分
         </p>
     </TitledGreyBox>
 );

@@ -47,7 +47,7 @@ export default () => {
                 addFlash({
                     key: 'account:password',
                     type: 'danger',
-                    title: 'Error',
+                    title: '錯誤',
                     message: httpErrorToHuman(error),
                 })
             )
@@ -69,16 +69,16 @@ export default () => {
                                 id={'current_password'}
                                 type={'password'}
                                 name={'current'}
-                                label={'Current Password'}
+                                label={'目前密碼'}
                             />
                             <div css={tw`mt-6`}>
                                 <Field
                                     id={'new_password'}
                                     type={'password'}
                                     name={'password'}
-                                    label={'New Password'}
+                                    label={'新密碼'}
                                     description={
-                                        'Your new password should be at least 8 characters in length and unique to this website.'
+                                        '你的新密碼長度應至少為8個字元，並且是本網站的唯一密碼。'
                                     }
                                 />
                             </div>
@@ -87,11 +87,11 @@ export default () => {
                                     id={'confirm_new_password'}
                                     type={'password'}
                                     name={'confirmPassword'}
-                                    label={'Confirm New Password'}
+                                    label={'確認新密碼'}
                                 />
                             </div>
                             <div css={tw`mt-6`}>
-                                <Button disabled={isSubmitting || !isValid}>Update Password</Button>
+                                <Button disabled={isSubmitting || !isValid}>更新密碼</Button>
                             </div>
                         </Form>
                     </React.Fragment>

@@ -46,9 +46,9 @@ export default ({ open, onClose }: DialogProps) => {
         <Dialog
             open={open}
             onClose={onClose}
-            title={'Create a new ticket'}
+            title={'建立一個新客服單'}
             description={
-                'This ticket will be registered under your account and accessible to all administrators on the Panel.'
+                '此客服單將註冊在您的帳戶下，並供面板上的所有管理員存取.'
             }
         >
             <Formik
@@ -65,7 +65,7 @@ export default ({ open, onClose }: DialogProps) => {
                         <FormikFieldWrapper
                             label={'Title'}
                             name={'title'}
-                            description={'A title for this ticket.'}
+                            description={'客服單的標題'}
                             className={'mb-6'}
                         >
                             <Field name={'title'} as={Input} />
@@ -74,13 +74,13 @@ export default ({ open, onClose }: DialogProps) => {
                             label={'Description'}
                             name={'description'}
                             description={
-                                'Provide additional information, images and other content in order to help us fix your issue faster.'
+                                '請提供額外的資訊、圖片和其他內容，以便我們更快地解決您的問題.'
                             }
                         >
                             <Field name={'description'} as={CustomTextarea} />
                         </FormikFieldWrapper>
                         <div className={'flex justify-end mt-6'}>
-                            <Button type={'submit'}>Create</Button>
+                            <Button type={'submit'}>建立</Button>
                         </div>
                     </Form>
                 )}

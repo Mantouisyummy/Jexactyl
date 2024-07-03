@@ -21,8 +21,8 @@ export default () => {
 
     return (
         <PageContentBlock
-            title={'Support Tickets'}
-            description={'Create or reply to a support ticket.'}
+            title={'客服單'}
+            description={'建立或是回復一個客服單.'}
             showFlashKey={'tickets'}
         >
             <NewTicketDialog open={visible} onClose={() => setVisible(false)} />
@@ -63,7 +63,7 @@ export default () => {
                 ))}
             </div>
             <div className={'w-full flex lg:justify-end lg:items-end mt-2'}>
-                <Button onClick={() => setVisible(true)}>Create New Ticket</Button>
+                <Button onClick={() => setVisible(true)}>建立新的客服單</Button>
             </div>
         </PageContentBlock>
     );

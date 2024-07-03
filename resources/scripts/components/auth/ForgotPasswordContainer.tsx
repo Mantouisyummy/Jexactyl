@@ -77,14 +77,14 @@ export default () => {
                         light
                         label={'Email'}
                         description={
-                            'Enter your account email address to receive instructions on resetting your password.'
+                            '請輸入您的電子郵件地址，以接收重設密碼的信件.'
                         }
                         name={'email'}
                         type={'email'}
                     />
                     <div css={tw`mt-6`}>
                         <Button size={Button.Sizes.Large} css={tw`w-full`} type={'submit'} disabled={isSubmitting}>
-                            Send Email
+                            傳送電子郵件
                         </Button>
                     </div>
                     {recaptchaEnabled && (
@@ -107,7 +107,7 @@ export default () => {
                             to={'/auth/login'}
                             css={tw`text-xs text-neutral-500 tracking-wide uppercase no-underline hover:text-neutral-700`}
                         >
-                            Return to Login
+                            回到登入
                         </Link>
                     </div>
                 </LoginFormContainer>

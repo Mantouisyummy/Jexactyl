@@ -155,98 +155,98 @@ export default () => {
                 })}
             >
                 <Form>
-                    <h1 className={'text-5xl'}>Basic Details</h1>
-                    <h3 className={'text-2xl text-neutral-500'}>Set the basic fields for your new server.</h3>
+                    <h1 className={'text-5xl'}>基本資料</h1>
+                    <h3 className={'text-2xl text-neutral-500'}>設定您新伺服器的基本欄位.</h3>
                     <StoreContainer className={'lg:grid lg:grid-cols-2 my-10 gap-4'}>
                         <TitledGreyBox title={'Server name'} icon={faStickyNote} className={'mt-8 sm:mt-0'}>
                             <Field name={'name'} />
-                            <p className={'mt-1 text-xs'}>Assign a name to your server for use in the Panel.</p>
+                            <p className={'mt-1 text-xs'}>為您的伺服器設定一個好的名稱.</p>
                             <p className={'mt-1 text-xs text-gray-400'}>
-                                Character limits: <code>a-z A-Z 0-9 _ - .</code> and <code>[Space]</code>.
+                                字元限制: <code>a-z A-Z 0-9 _ - .</code> and <code>[Space]</code>.
                             </p>
                         </TitledGreyBox>
                         <TitledGreyBox title={'Server description'} icon={faList} className={'mt-8 sm:mt-0'}>
                             <Field name={'description'} />
-                            <p className={'mt-1 text-xs'}>Set a description for your server.</p>
-                            <p className={'mt-1 text-xs text-yellow-400'}>* Optional</p>
+                            <p className={'mt-1 text-xs'}>為您的伺服器設定一個好的簡介.</p>
+                            <p className={'mt-1 text-xs text-yellow-400'}>* 可選</p>
                         </TitledGreyBox>
                     </StoreContainer>
-                    <h1 className={'text-5xl'}>Resource Limits</h1>
-                    <h3 className={'text-2xl text-neutral-500'}>Set specific limits for CPU, RAM and more.</h3>
+                    <h1 className={'text-5xl'}>資源限制</h1>
+                    <h3 className={'text-2xl text-neutral-500'}>設定CPU、RAM等資源的具體數量限制.</h3>
                     <StoreContainer className={'lg:grid lg:grid-cols-3 my-10 gap-4'}>
-                        <TitledGreyBox title={'Server CPU limit'} icon={faMicrochip} className={'mt-8 sm:mt-0'}>
+                        <TitledGreyBox title={'CPU限制'} icon={faMicrochip} className={'mt-8 sm:mt-0'}>
                             <Field name={'cpu'} />
-                            <p className={'mt-1 text-xs'}>Assign a limit for usable CPU.</p>
-                            <p className={'mt-1 text-xs text-gray-400'}>{resources.cpu}% in account</p>
+                            <p className={'mt-1 text-xs'}>分配可用CPU的限制</p>
+                            <p className={'mt-1 text-xs text-gray-400'}>{resources.cpu}% 於帳號中</p>
                         </TitledGreyBox>
-                        <TitledGreyBox title={'Server RAM limit'} icon={faMemory} className={'mt-8 sm:mt-0'}>
+                        <TitledGreyBox title={'記憶體限制'} icon={faMemory} className={'mt-8 sm:mt-0'}>
                             <div className={'relative'}>
                                 <Field name={'memory'} />
                                 <p className={'absolute text-sm top-1.5 right-2 bg-gray-700 p-2 rounded-lg'}>MB</p>
                             </div>
-                            <p className={'mt-1 text-xs'}>Assign a limit for usable RAM.</p>
+                            <p className={'mt-1 text-xs'}>分配可用RAM的限制</p>
                             <p className={'mt-1 text-xs text-gray-400'}>{resources.memory}MB available</p>
                         </TitledGreyBox>
-                        <TitledGreyBox title={'Server Storage limit'} icon={faHdd} className={'mt-8 sm:mt-0'}>
+                        <TitledGreyBox title={'儲存限制'} icon={faHdd} className={'mt-8 sm:mt-0'}>
                             <div className={'relative'}>
                                 <Field name={'disk'} />
                                 <p className={'absolute text-sm top-1.5 right-2 bg-gray-700 p-2 rounded-lg'}>MB</p>
                             </div>
-                            <p className={'mt-1 text-xs'}>Assign a limit for usable storage.</p>
-                            <p className={'mt-1 text-xs text-gray-400'}>{resources.disk}MB available</p>
+                            <p className={'mt-1 text-xs'}>分配可用儲存空間的限制</p>
+                            <p className={'mt-1 text-xs text-gray-400'}>{resources.disk}MB 可用的</p>
                         </TitledGreyBox>
                     </StoreContainer>
-                    <h1 className={'text-5xl'}>Feature Limits</h1>
+                    <h1 className={'text-5xl'}>功能限制</h1>
                     <h3 className={'text-2xl text-neutral-500'}>
-                        Add databases, allocations and ports to your server.
+                        為您的伺服器添加資料庫、分配和連接埠。
                     </h3>
                     <StoreContainer className={'lg:grid lg:grid-cols-3 my-10 gap-4'}>
-                        <TitledGreyBox title={'Server allocations'} icon={faNetworkWired} className={'mt-8 sm:mt-0'}>
+                        <TitledGreyBox title={'分配'} icon={faNetworkWired} className={'mt-8 sm:mt-0'}>
                             <Field name={'ports'} />
-                            <p className={'mt-1 text-xs'}>Assign a number of ports to your server.</p>
-                            <p className={'mt-1 text-xs text-gray-400'}>{resources.ports} available</p>
+                            <p className={'mt-1 text-xs'}>為您的伺服器分配連接埠數量.</p>
+                            <p className={'mt-1 text-xs text-gray-400'}>{resources.ports} 可用的</p>
                         </TitledGreyBox>
-                        <TitledGreyBox title={'Server backups'} icon={faArchive} className={'mt-8 sm:mt-0'}>
+                        <TitledGreyBox title={'備份'} icon={faArchive} className={'mt-8 sm:mt-0'}>
                             <Field name={'backups'} />
-                            <p className={'mt-1 text-xs'}>Assign a number of backups to your server.</p>
-                            <p className={'mt-1 text-xs text-gray-400'}>{resources.backups} available</p>
+                            <p className={'mt-1 text-xs'}>為您的伺服器分配備份數量.</p>
+                            <p className={'mt-1 text-xs text-gray-400'}>{resources.backups} 可用的</p>
                         </TitledGreyBox>
-                        <TitledGreyBox title={'Server databases'} icon={faDatabase} className={'mt-8 sm:mt-0'}>
+                        <TitledGreyBox title={'資料庫'} icon={faDatabase} className={'mt-8 sm:mt-0'}>
                             <Field name={'databases'} />
-                            <p className={'mt-1 text-xs'}>Assign a number of databases to your server.</p>
-                            <p className={'mt-1 text-xs text-gray-400'}>{resources.databases} available</p>
+                            <p className={'mt-1 text-xs'}>為您的伺服器分配資料庫數量.</p>
+                            <p className={'mt-1 text-xs text-gray-400'}>{resources.databases} 可用的</p>
                         </TitledGreyBox>
                     </StoreContainer>
-                    <h1 className={'text-5xl'}>Deployment</h1>
-                    <h3 className={'text-2xl text-neutral-500'}>Choose a node and server type.</h3>
+                    <h1 className={'text-5xl'}>部署</h1>
+                    <h3 className={'text-2xl text-neutral-500'}>選擇節點和伺服器類型.</h3>
                     <StoreContainer className={'lg:grid lg:grid-cols-3 my-10 gap-4'}>
-                        <TitledGreyBox title={'Available Nodes'} icon={faLayerGroup} className={'mt-8 sm:mt-0'}>
+                        <TitledGreyBox title={'可用節點'} icon={faLayerGroup} className={'mt-8 sm:mt-0'}>
                             <Select name={'node'} onChange={(e) => setNode(parseInt(e.target.value))}>
-                                {!node && <option>Select a node...</option>}
+                                {!node && <option>選擇節點...</option>}
                                 {nodes.map((n) => (
                                     <option key={n.id} value={n.id}>
                                         {n.name} ({n.location}) |{' '}
-                                        {100 - parseInt(((n?.used / n?.total) * 100).toFixed(0))}% free | {n.deployFee}{' '}
-                                        credits
+                                        {100 - parseInt(((n?.used / n?.total) * 100).toFixed(0))}% 可用 | {n.deployFee}{' '}
+                                        積分
                                     </option>
                                 ))}
                             </Select>
-                            <p className={'mt-1 text-xs text-gray-400'}>Select a node to deploy your server to.</p>
+                            <p className={'mt-1 text-xs text-gray-400'}>選擇部署至伺服器的節點.</p>
                         </TitledGreyBox>
-                        <TitledGreyBox title={'Server Nest'} icon={faCube} className={'mt-8 sm:mt-0'}>
+                        <TitledGreyBox title={'Nest'} icon={faCube} className={'mt-8 sm:mt-0'}>
                             <Select name={'nest'} onChange={(nest) => changeNest(nest)}>
-                                {!nest && <option>Select a nest...</option>}
+                                {!nest && <option>選擇一個Nest...</option>}
                                 {nests.map((n) => (
                                     <option key={n.id} value={n.id}>
                                         {n.name}
                                     </option>
                                 ))}
                             </Select>
-                            <p className={'mt-1 text-xs text-gray-400'}>Select a nest to use for your server.</p>
+                            <p className={'mt-1 text-xs text-gray-400'}>選擇欲用至伺服器的Nest.</p>
                         </TitledGreyBox>
-                        <TitledGreyBox title={'Server Egg'} icon={faEgg} className={'mt-8 sm:mt-0'}>
+                        <TitledGreyBox title={'Egg'} icon={faEgg} className={'mt-8 sm:mt-0'}>
                             <Select name={'egg'} onChange={(e) => setEgg(parseInt(e.target.value))}>
-                                {!egg && <option>Select an egg...</option>}
+                                {!egg && <option>選擇Egg...</option>}
                                 {eggs.map((e) => (
                                     <option key={e.id} value={e.id}>
                                         {e.name}
@@ -254,7 +254,7 @@ export default () => {
                                 ))}
                             </Select>
                             <p className={'mt-1 text-xs text-gray-400'}>
-                                Choose what game you want to run on your server.
+                                選擇您想在您的伺服器上運行的遊戲.
                             </p>
                         </TitledGreyBox>
                     </StoreContainer>
@@ -267,7 +267,7 @@ export default () => {
                                 size={Button.Sizes.Large}
                                 disabled={loading}
                             >
-                                <Icon.Server className={'mr-2'} /> Create
+                                <Icon.Server className={'mr-2'} /> 建立
                             </Button>
                         </div>
                     </InputSpinner>

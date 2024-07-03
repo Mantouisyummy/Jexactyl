@@ -34,33 +34,33 @@ export default () => {
     const referrals = useStoreState((state) => state.storefront.data!.referrals.enabled);
 
     return (
-        <PageContentBlock title={'Account Overview'} description={'View and update account details.'}>
+        <PageContentBlock title={'帳戶總覽'} description={'查看以及更新帳戶資訊.'}>
             {state?.twoFactorRedirect && (
                 <Alert type={'danger'}>
-                    Your account must have two-factor authentication enabled in order to continue.
+                    您的帳戶必須啟用2FA (雙重身份驗證) 才能繼續。
                 </Alert>
             )}
             <Container
                 className={'j-up'}
                 css={[tw`lg:grid lg:grid-cols-2 gap-8 mb-10`, state?.twoFactorRedirect ? tw`mt-4` : tw`mt-10`]}
             >
-                <ContentBox title={'Update Username'} showFlashes={'account:username'}>
+                <ContentBox title={'更新用戶名稱'} showFlashes={'account:username'}>
                     <UpdateUsernameForm />
                 </ContentBox>
-                <ContentBox title={'Update Email Address'} showFlashes={'account:email'}>
+                <ContentBox title={'更新電郵'} showFlashes={'account:email'}>
                     <UpdateEmailAddressForm />
                 </ContentBox>
                 {referrals && (
-                    <ContentBox title={'Referral Codes'} showFlashes={'account:referral'}>
+                    <ContentBox title={'推薦碼'} showFlashes={'account:referral'}>
                         <AddReferralCodeForm />
                     </ContentBox>
                 )}
                 {discord && (
-                    <ContentBox title={'Connect with Discord'} showFlashes={'account:discord'}>
+                    <ContentBox title={'連接至Discord'} showFlashes={'account:discord'}>
                         <DiscordAccountForm />
                     </ContentBox>
                 )}
             </Container>
-        </PageContentBlock>
+        </PageContentBlock >
     );
 };

@@ -52,10 +52,10 @@ export default () => {
             <NewMessageDialog open={visible} onClose={() => setVisible(false)} />
             <div className={'mt-6 grid grid-cols-1 sm:grid-cols-2 lg:w-1/4 gap-4'}>
                 <Button.Text className={'w-full'} onClick={doRedirect}>
-                    View All Tickets
+                    查看所有客服單
                 </Button.Text>
                 <Button.Danger className={'w-full'} onClick={doDeletion}>
-                    Delete Ticket
+                    刪除客服單
                 </Button.Danger>
             </div>
             <Alert
@@ -63,16 +63,16 @@ export default () => {
                     ticket.status === 'pending'
                         ? 'info'
                         : ticket.status === 'in-progress'
-                        ? 'info'
-                        : ticket.status === 'unresolved'
-                        ? 'danger'
-                        : ticket.status === 'resolved'
-                        ? 'success'
-                        : 'warning'
+                            ? 'info'
+                            : ticket.status === 'unresolved'
+                                ? 'danger'
+                                : ticket.status === 'resolved'
+                                    ? 'success'
+                                    : 'warning'
                 }
                 className={'my-4 w-full'}
             >
-                This ticket is marked as&nbsp;<p className={'font-bold'}>{ticket.status ?? 'unknown'}</p>.
+                此客服單已被標記為&nbsp;<p className={'font-bold'}>{ticket.status ?? 'unknown'}</p>.
             </Alert>
             <TitledGreyBox title={ticket.title}>
                 <p className={'line-clamp-5 truncate'}>{ticket.content}</p>
@@ -83,7 +83,7 @@ export default () => {
                 )}
             </TitledGreyBox>
             {!messages ? (
-                <p className={'text-gray-400 text-center'}>No one has replied to this ticket yet.</p>
+                <p className={'text-gray-400 text-center'}>此客服單還沒有任何人回覆.</p>
             ) : (
                 <>
                     {messages.map((message) => (
@@ -111,7 +111,7 @@ export default () => {
                 </>
             )}
             <div className={'flex justify-center items-center mt-6'}>
-                <Button onClick={() => setVisible(true)}>Create Message</Button>
+                <Button onClick={() => setVisible(true)}>發送訊息</Button>
             </div>
         </PageContentBlock>
     );

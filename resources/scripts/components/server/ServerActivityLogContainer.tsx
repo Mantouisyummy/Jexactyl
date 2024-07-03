@@ -32,8 +32,8 @@ export default () => {
 
     return (
         <ServerContentBlock
-            title={'Server Activity'}
-            description={'View activity on this server.'}
+            title={'伺服器活動'}
+            description={'查看此伺服器的活動.'}
             showFlashKey={'server:activity'}
         >
             {(filters.filters?.event || filters.filters?.ip) && (
@@ -50,7 +50,7 @@ export default () => {
             {!data && isValidating ? (
                 <Spinner centered />
             ) : !data?.items.length ? (
-                <p className={'text-sm text-center text-gray-400'}>No activity logs available for this server.</p>
+                <p className={'text-sm text-center text-gray-400'}>沒有活動紀錄.</p>
             ) : (
                 <div className={'bg-neutral-900 j-up'}>
                     {data?.items.map((activity) => (

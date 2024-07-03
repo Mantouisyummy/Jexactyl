@@ -14,29 +14,29 @@ export default () => {
             <div className={'flex flex-row items-center justify-between mt-10'}>
                 {width >= 1280 && (
                     <div>
-                        <h1 className={'text-6xl'}>Hey, {username}!</h1>
-                        <h3 className={'text-2xl mt-2 text-neutral-500'}>👋 Welcome to the store.</h3>
+                        <h1 className={'text-6xl'}>嘿, {username}!</h1>
+                        <h3 className={'text-2xl mt-2 text-neutral-500'}>👋 歡迎來到商店.</h3>
                     </div>
                 )}
                 <ResourceBar className={'w-full lg:w-3/4'} />
             </div>
             <div className={'lg:grid lg:grid-cols-3 gap-8 my-10'}>
                 <StoreBanner
-                    title={'Want to create a server?'}
+                    title={'想要創建伺服器?'}
                     className={'bg-storeone'}
-                    action={'Create'}
+                    action={'建立'}
                     link={'create'}
                 />
                 <StoreBanner
-                    title={'Need more resources?'}
+                    title={'需要更多資源?'}
                     className={'bg-storetwo'}
-                    action={'Buy Resources'}
+                    action={'購買資源'}
                     link={'resources'}
                 />
                 <StoreBanner
-                    title={'Run out of credits?'}
+                    title={'沒有積分了?'}
                     className={'bg-storethree'}
-                    action={'Buy Credits'}
+                    action={'購買積分'}
                     link={'credits'}
                 />
             </div>
